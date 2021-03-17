@@ -11,17 +11,12 @@ class Scraper:
         res = requests.get(constructedUrl)
 
         if res:
-
             if res.status_code == 200:
-
                 data = json.loads(res.content)
                 return data
-
             elif res.status_code == 404:
                 raise Exception(f"No content found at {constructedUrl}")
-
             # more response codes here
-
         else:
             raise Exception(f"No response from {constructedUrl}.")
 
